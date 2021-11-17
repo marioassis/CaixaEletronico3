@@ -26,8 +26,9 @@ namespace CaixaEletronico3
             lucas.saldo = 4500.0;
             mario.saldo = 3570.0;
 
-            lucas.Saca(200);
-            MessageBox.Show("O saldo atual da conta é " + lucas.saldo);
+            lucas.Transfere(200,mario);
+            MessageBox.Show("Lucas" + lucas.saldo);
+            MessageBox.Show("Mario" + mario.saldo);
         }
     }
 }
