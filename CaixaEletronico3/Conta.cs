@@ -25,6 +25,13 @@ namespace CaixaEletronico3
             this.Saca(valor);
             destino.Deposita(valor);
         }
+        
+        public bool VerificaSaldo(Conta conta)
+        {
+            if(conta.saldo => 0) return true;
+
+            return false;               
+        }
     }
 
 }
