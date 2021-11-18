@@ -19,16 +19,21 @@ namespace CaixaEletronico3
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Conta lucas = new Conta();
-            Conta mario = new Conta();
-                       
-
-            lucas.saldo = 4500.0;
-            mario.saldo = 3570.0;
-
-            lucas.Transfere(200,mario);
-            MessageBox.Show("Lucas" + lucas.saldo);
-            MessageBox.Show("Mario" + mario.saldo);
+            Conta origem = new Conta();
+            Conta destino = new Conta();
+            
+            origem.saldo = 4500.0;
+            destino.saldo = 3570.0;
+            
+            if(origem.VerificaSaldo){
+                origem.Transfere(200,destino);
+                MessageBox.Show("Origem" + origem.saldo);
+                MessageBox.Show("Destino" + destino.saldo);
+            }
+            else
+            {
+                MessageBox.Show("Você não tem saldo para efetuar a operação! " + origem.saldo);
+            }
         }
     }
 }
